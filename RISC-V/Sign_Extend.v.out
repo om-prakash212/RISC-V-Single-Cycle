@@ -1,0 +1,61 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x152f04db0 .scope module, "Sign_Extend" "Sign_Extend" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "In";
+    .port_info 1 /OUTPUT 32 "Imm_Ext";
+    .port_info 2 /INPUT 1 "ImmSrc";
+o0x148030010 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x148068010 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+L_0x152f1a6b0 .functor XNOR 1, o0x148030010, L_0x148068010, C4<0>, C4<0>;
+v0x152f04f20_0 .net "ImmSrc", 0 0, o0x148030010;  0 drivers
+v0x152f19cf0_0 .net "Imm_Ext", 31 0, L_0x152f1b5a0;  1 drivers
+o0x148030070 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x152f19d90_0 .net "In", 31 0, o0x148030070;  0 drivers
+v0x152f19e40_0 .net/2u *"_ivl_0", 0 0, L_0x148068010;  1 drivers
+v0x152f19ef0_0 .net *"_ivl_11", 4 0, L_0x152f1a9b0;  1 drivers
+v0x152f19fe0_0 .net *"_ivl_12", 31 0, L_0x152f1ad70;  1 drivers
+v0x152f1a090_0 .net *"_ivl_15", 0 0, L_0x152f1af20;  1 drivers
+v0x152f1a140_0 .net *"_ivl_16", 19 0, L_0x152f1b040;  1 drivers
+v0x152f1a1f0_0 .net *"_ivl_19", 11 0, L_0x152f1b190;  1 drivers
+v0x152f1a300_0 .net *"_ivl_2", 0 0, L_0x152f1a6b0;  1 drivers
+v0x152f1a3a0_0 .net *"_ivl_20", 31 0, L_0x152f1b230;  1 drivers
+v0x152f1a450_0 .net *"_ivl_5", 0 0, L_0x152f1a780;  1 drivers
+v0x152f1a500_0 .net *"_ivl_6", 19 0, L_0x152f1a840;  1 drivers
+v0x152f1a5b0_0 .net *"_ivl_9", 6 0, L_0x152f1aa70;  1 drivers
+L_0x152f1a780 .part o0x148030070, 31, 1;
+LS_0x152f1a840_0_0 .concat [ 1 1 1 1], L_0x152f1a780, L_0x152f1a780, L_0x152f1a780, L_0x152f1a780;
+LS_0x152f1a840_0_4 .concat [ 1 1 1 1], L_0x152f1a780, L_0x152f1a780, L_0x152f1a780, L_0x152f1a780;
+LS_0x152f1a840_0_8 .concat [ 1 1 1 1], L_0x152f1a780, L_0x152f1a780, L_0x152f1a780, L_0x152f1a780;
+LS_0x152f1a840_0_12 .concat [ 1 1 1 1], L_0x152f1a780, L_0x152f1a780, L_0x152f1a780, L_0x152f1a780;
+LS_0x152f1a840_0_16 .concat [ 1 1 1 1], L_0x152f1a780, L_0x152f1a780, L_0x152f1a780, L_0x152f1a780;
+LS_0x152f1a840_1_0 .concat [ 4 4 4 4], LS_0x152f1a840_0_0, LS_0x152f1a840_0_4, LS_0x152f1a840_0_8, LS_0x152f1a840_0_12;
+LS_0x152f1a840_1_4 .concat [ 4 0 0 0], LS_0x152f1a840_0_16;
+L_0x152f1a840 .concat [ 16 4 0 0], LS_0x152f1a840_1_0, LS_0x152f1a840_1_4;
+L_0x152f1aa70 .part o0x148030070, 25, 7;
+L_0x152f1a9b0 .part o0x148030070, 7, 5;
+L_0x152f1ad70 .concat [ 5 7 20 0], L_0x152f1a9b0, L_0x152f1aa70, L_0x152f1a840;
+L_0x152f1af20 .part o0x148030070, 31, 1;
+LS_0x152f1b040_0_0 .concat [ 1 1 1 1], L_0x152f1af20, L_0x152f1af20, L_0x152f1af20, L_0x152f1af20;
+LS_0x152f1b040_0_4 .concat [ 1 1 1 1], L_0x152f1af20, L_0x152f1af20, L_0x152f1af20, L_0x152f1af20;
+LS_0x152f1b040_0_8 .concat [ 1 1 1 1], L_0x152f1af20, L_0x152f1af20, L_0x152f1af20, L_0x152f1af20;
+LS_0x152f1b040_0_12 .concat [ 1 1 1 1], L_0x152f1af20, L_0x152f1af20, L_0x152f1af20, L_0x152f1af20;
+LS_0x152f1b040_0_16 .concat [ 1 1 1 1], L_0x152f1af20, L_0x152f1af20, L_0x152f1af20, L_0x152f1af20;
+LS_0x152f1b040_1_0 .concat [ 4 4 4 4], LS_0x152f1b040_0_0, LS_0x152f1b040_0_4, LS_0x152f1b040_0_8, LS_0x152f1b040_0_12;
+LS_0x152f1b040_1_4 .concat [ 4 0 0 0], LS_0x152f1b040_0_16;
+L_0x152f1b040 .concat [ 16 4 0 0], LS_0x152f1b040_1_0, LS_0x152f1b040_1_4;
+L_0x152f1b190 .part o0x148030070, 20, 12;
+L_0x152f1b230 .concat [ 12 20 0 0], L_0x152f1b190, L_0x152f1b040;
+L_0x152f1b5a0 .functor MUXZ 32, L_0x152f1b230, L_0x152f1ad70, L_0x152f1a6b0, C4<>;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "Sign_Extend.v";
